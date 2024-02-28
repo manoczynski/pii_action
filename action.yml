@@ -11,10 +11,12 @@ branding:
 inputs:
   azure-language-key:
     required: true
-    description: 'Azure AI Language Services resource key found in in the Azure Portal'
+    description:
+      'Azure AI Language Services resource key found in in the Azure Portal'
   azure-language-endpoint:
     required: true
-    description: 'Azure AI Language Services endpoint found in in the Azure Portal'
+    description:
+      'Azure AI Language Services endpoint found in in the Azure Portal'
   categories:
     required: true
     description: 'A pipe-separated list of included categories'
@@ -25,7 +27,9 @@ inputs:
 # Define your outputs here.
 outputs:
   results:
-    description: 'Personally Identifiable Information (PII) detection from Azure AI Language'
+    description:
+      'Personally Identifiable Information (PII) detection from Azure AI
+      Language'
 
 runs:
   using: node20
