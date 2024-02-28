@@ -1,6 +1,6 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Azure AI Language Service PII Detection'
+description: 'Detect Personally Identifiable Information'
+author: 'Marcin Noczynski'
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
@@ -9,15 +9,23 @@ branding:
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  azure-language-key:
     required: true
-    default: '1000'
+    description: 'Azure AI Language Services resource key found in in the Azure Portal'
+  azure-language-endpoint:
+    required: true
+    description: 'Azure AI Language Services endpoint found in in the Azure Portal'
+  categories:
+    required: true
+    description: 'A pipe-separated list of included categories'
+  github-token:
+    required: true
+    description: 'Your GitHub token'
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  results:
+    description: 'Personally Identifiable Information (PII) detection from Azure AI Language'
 
 runs:
   using: node20
