@@ -19,7 +19,7 @@ export async function run(): Promise<void> {
 
     console.log(context.payload)
 
-    if (!categories || categories.length == 0)
+    if (!categories || categories.length === 0)
       throw new Error('No categories defined')
 
     if (!subKey)
@@ -27,7 +27,7 @@ export async function run(): Promise<void> {
 
     if (!url) throw new Error('No Azure Language Service endpoint defined')
 
-    const client = github.getOctokit(gitHubToken)
+    //const client = github.getOctokit(gitHubToken)
     let textToCheck
     let containsPii = false
     let issueNumber = 0
@@ -59,7 +59,7 @@ export async function run(): Promise<void> {
     ) {
       //A comment was added to the issue/pull request
       textToCheck = context.payload.comment.body
-      issueNumber = context.issue.number
+      //issueNumber = context.issue.number
     }
 
     const response = await pii.callPiiDetectionEndpoint(

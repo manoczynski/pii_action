@@ -48,9 +48,9 @@ export async function callPiiDetectionEndpoint(
   azureLanguageSubscriptionKey: string
 ): Promise<ResponseDocumentRoot> {
   try {
-    let url = `${azurLanguageEndpoint}/language/:analyze-text?api-version=2022-05-01`
+    const url = `${azurLanguageEndpoint}/language/:analyze-text?api-version=2022-05-01`
 
-    let documents: Document[] = [
+    const documents: Document[] = [
       {
         id: '1',
         language: 'en',
@@ -58,7 +58,7 @@ export async function callPiiDetectionEndpoint(
       }
     ]
 
-    let piiEntityRecognition: PiiEntityRecognition = {
+    const piiEntityRecognition: PiiEntityRecognition = {
       kind: 'PiiEntityRecognition',
       parameters: {
         modelVersion: 'latest'
