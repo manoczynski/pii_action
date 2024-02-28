@@ -51,10 +51,6 @@ export async function run(): Promise<void> {
       issueNumber = context.issue.number;
     }
 
-
-    // Log the current timestamp, wait, then log the new timestamp
-    core.debug(new Date().toTimeString())
-
     const response = await pii.callPiiDetectionEndpoint(textToCheck, url, subKey)
 
     if (response) {
@@ -88,10 +84,6 @@ export async function run(): Promise<void> {
       console.log("\n\n------------------------------------------------------");
     }
 
-    core.debug(new Date().toTimeString())
-
-    // Set outputs for other workflow steps to use
-    core.setOutput('time', new Date().toTimeString())
   } catch (error) {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)
