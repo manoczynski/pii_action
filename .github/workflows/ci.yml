@@ -57,7 +57,10 @@ jobs:
         id: test-action
         uses: ./
         with:
-          milliseconds: 2000
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          azure-language-key: ${{ secrets.AZURE_LANGUAGE_KEY }}
+          azure-language-endpoint: ${{ secrets.AZURE_LANGUAGE_ENDPOINT }}
+          categories: " "
 
       - name: Print Output
         id: output
